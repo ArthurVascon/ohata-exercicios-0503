@@ -13,21 +13,27 @@ public class Exercicio3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Material do exercício
         sphere.GetComponent<MeshRenderer>().material = materials[3];
     }
     
     void Update()
     {
+        //Se a posição do objeto não for igual ao da posição
         if (sphere.transform.position != endPosition[index].position)
         {
+            //Move o objeto para a posição
             sphere.transform.position = Vector3.MoveTowards(sphere.transform.localPosition, endPosition[index].position, speed * Time.deltaTime);
         } else
         {
+            //Se for o último ponto
             if(index == 4)
             {
+                //Muda o Index pro primeiro ponto
                 index = 0;
             } else
             {
+                //Senão, aumenta o index
                 index++;
             }
         }

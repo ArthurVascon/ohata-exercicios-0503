@@ -17,6 +17,7 @@ public class Exercicio2 : MonoBehaviour
 
     private void Start()
     {
+        //Posições iniciais dos objetos
         sphere.transform.position = startPosition[0].transform.position;
         cube.transform.position = startPosition[1].transform.position;
     }
@@ -30,9 +31,11 @@ public class Exercicio2 : MonoBehaviour
     
     void Exercicio3()
     {
+        //Materiais do exercício
         sphere.GetComponent<MeshRenderer>().material = materials[2];
         cube.GetComponent<MeshRenderer>().material = materials[2];
         cube.gameObject.SetActive(true);
+        //Mesma coisa que o exercício um, mudando a posição final para um objeto em movimento.
         sphere.transform.position = Vector3.MoveTowards(sphere.transform.position, target.transform.position, speed * Time.deltaTime);
         cube.transform.position = Vector3.MoveTowards(cube.transform.position, target.transform.position, speed * Time.deltaTime);
         target.transform.position = Vector3.MoveTowards(target.transform.position, endPosition[1].position, speed1 * Time.deltaTime);

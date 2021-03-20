@@ -15,6 +15,7 @@ public class Exercicio1 : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        //Posições diferentes para objetos diferentes representando o exercício
         sphere.transform.position = startPosition[0].transform.position;
         cube.transform.position = startPosition[1].transform.position;
     }
@@ -27,10 +28,12 @@ public class Exercicio1 : MonoBehaviour
 
     void Exercicio2()
     {
+        
         sphere.GetComponent<MeshRenderer>().material = materials[1];
         
         cube.gameObject.SetActive(true);
         cube.GetComponent<MeshRenderer>().material = materials[1];
+        //Mesma coisa do exercício do exercício 1, com 2 objetos diferentes.
         sphere.transform.position = Vector3.MoveTowards(sphere.transform.localPosition, endPosition[0].position, speed * Time.deltaTime);
         cube.transform.position = Vector3.MoveTowards(cube.transform.localPosition, endPosition[0].position, speed * Time.deltaTime);
     }
